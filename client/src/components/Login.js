@@ -30,7 +30,7 @@ const Login = () => {
         })}
       >
         {({ isSubmitting }) => (
-          <Form>
+          <Form className='loginForm'>
             <ErrorMessage name='username' component='p' />
             <Field
               type='username'
@@ -44,7 +44,7 @@ const Login = () => {
               placeholder='enter password'
             />
             <button type='submit' disabled={isSubmitting}>
-              Submit
+              Log In!
             </button>
           </Form>
         )}

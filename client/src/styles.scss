@@ -97,3 +97,34 @@ form {
     margin-top: 16px;
   }
 }
+
+.signOut {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: #8b0000;
+  color: white;
+  padding: 3px 8px;
+  margin: 16px;
+}
+
+.loginForm {
+  align-items: center;
+  input {
+    margin: 20px;
+    height: 2rem;
+    width: 10rem;
+    border-radius: 10px;
+    border: black 1px solid;
+    font-size: 16px;
+  }
+  button {
+    width: 50%;
+    border: none;
+    background-color: #013220;
+    color: white;
+    padding: 3px 8px;
+    margin-top: 16px;
+  }
+}

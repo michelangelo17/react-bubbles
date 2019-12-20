@@ -43,12 +43,13 @@ const ColorList = ({ colors, updateColors }) => {
       .catch(err => console.log(err))
   }
 
-  const addNew = e => {
+  const addNew = async e => {
     e.preventDefault()
-    axiosWithAuth()
+    await axiosWithAuth()
       .post('/colors', newColor)
       .then(res => updateColors(res.data))
       .catch(err => console.log(err))
+    setNewColor(initialColor)
   }
 
   return (
@@ -106,7 +107,6 @@ const ColorList = ({ colors, updateColors }) => {
           </div>
         </form>
       )}
-      <div className='spacer' />
       <form onSubmit={addNew}>
         <legend>add color</legend>
         <label>
@@ -130,9 +130,10 @@ const ColorList = ({ colors, updateColors }) => {
         </label>
         <div className='button-row'>
           <button type='submit'>save</button>
-          <button type='reset'>cancel</button>
+          <button type='reset' onClick={() => setNewColor(initialColor)}>cancel</button>
         </div>
       </form>
+      <div className='spacer' />
     </div>
   )
 }
